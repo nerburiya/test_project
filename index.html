@@ -3,19 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Flash</title>
+    <title>Lotto Flash & AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Teachable Machine Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
     <div class="app-container">
-        <h1 class="title">Lotto Flash</h1>
-        <div class="numbers-wrapper">
-            <!-- Numbers will be injected here -->
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="openTab(event, 'lotto-tab')">Lotto Flash</button>
+            <button class="tab-btn" onclick="openTab(event, 'teachable-machine-tab')">AI Model</button>
         </div>
-        <button id="generate-btn" class="glow-on-hover" onclick="generateNumbers()">Generate Lucky Numbers</button>
+
+        <div id="lotto-tab" class="tab-content active">
+            <h1 class="title">Lotto Flash</h1>
+            <div class="numbers-wrapper">
+                <!-- Numbers will be injected here -->
+            </div>
+            <button id="generate-btn" class="glow-on-hover" onclick="generateNumbers()">Generate Lucky Numbers</button>
+        </div>
+
+        <div id="teachable-machine-tab" class="tab-content">
+            <h1 class="title">AI Model</h1>
+            <div class="ai-model-container">
+                <div class="model-info">Teachable Machine Image Model</div>
+                <button type="button" class="glow-on-hover small" onclick="initAI()">Start Camera</button>
+                <div id="webcam-container"></div>
+                <div id="label-container"></div>
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

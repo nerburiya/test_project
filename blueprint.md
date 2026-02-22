@@ -1,11 +1,12 @@
-# Lotto Number Generator
+# Lotto & Teachable Machine App
 
 ## Overview
 
-This is a web application that generates random lottery numbers with a visually engaging and modern interface.
+This is a multi-functional web application that features a "Lotto Flash" number generator and a "Teachable Machine" model integration through a modern tabbed interface.
 
 ## Features
 
+### Lotto Flash
 *   **Core:** Generates 6 unique random numbers between 1 and 45.
 *   **Visuals:**
     *   "Flashy" and modern dark-themed UI.
@@ -14,17 +15,21 @@ This is a web application that generates random lottery numbers with a visually 
     *   Color-coded balls based on number ranges.
     *   Smooth entrance animations for numbers.
     *   Interactive, glowing button with hover effects.
-*   **Typography:** Modern sans-serif font for better readability.
+
+### Teachable Machine Integration
+*   **Tabbed Navigation:** A smooth, responsive tab system to switch between applications.
+*   **Model Viewer:** A dedicated tab containing an iframe to connect to a Teachable Machine model.
 
 ## Current Plan
 
-*   **index.html**: Update structure to support new styling hooks and import Google Fonts.
-*   **style.css**: Implement the "flashy" design:
-    *   Dark background with animated gradients.
-    *   Glassmorphism effects for containers.
-    *   3D sphere styling for numbers.
-    *   Neon/Glowing button styles.
-    *   Keyframe animations for entrance effects.
-*   **main.js**:
-    *   Update generation logic to apply specific CSS classes for ball colors.
-    *   Add staggered animation delays for a more dramatic reveal.
+*   **index.html**: 
+    *   Introduce a tab navigation bar.
+    *   Wrap current lotto content in a tab pane.
+    *   Create a second tab pane for the Teachable Machine iframe.
+*   **style.css**: 
+    *   Style the tab navigation with modern, interactive effects.
+    *   Ensure the iframe container is responsive and fits the theme.
+    *   Maintain the existing "flashy" design for the lotto section.
+*   **main.js**: 
+    *   Implement logic to switch between tabs (active/inactive states).
+    *   Maintain the lottery number generation logic.
